@@ -1,0 +1,16 @@
+.vagrant*
+Attic
+pkg
+*.gem
+.vagrant
+tmp
+logs
+
+# YARD artifacts
+.yardoc
+_yardoc
+doc/
+
+# librarian-chef artifacts
+chef/cookbooks
+chef/tmp

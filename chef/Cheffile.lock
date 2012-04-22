@@ -1,0 +1,50 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    apt (1.4.2)
+    build-essential (1.0.0)
+    erlang (1.0.0)
+      yum (>= 0.5.0)
+    iptables (0.10.0)
+    runit (0.15.0)
+    yum (0.5.2)
+
+GIT
+  remote: https://github.com/portertech/chef-redis
+  ref: config
+  sha: fdaa681f80fc6f733483e2eb5518a08996996679
+  specs:
+    redis (1.0.1)
+      build-essential (>= 0.0.0)
+      runit (>= 0.0.0)
+
+GIT
+  remote: https://github.com/portertech/rabbitmq
+  ref: COOK-1219
+  sha: 85128ef52f47bcee3d7bb10312c49f27f9060d57
+  specs:
+    rabbitmq (1.4.0)
+      apt (>= 1.1)
+      erlang (>= 0.9)
+      yum (>= 0.5.0)
+
+GIT
+  remote: https://github.com/sensu/sensu-chef
+  ref: master
+  sha: f5fb8a2e98cd06a669750cebd90f5d8577fbe6e5
+  specs:
+    sensu (0.0.7)
+      apt (>= 0.0.0)
+      iptables (>= 0.0.0)
+      rabbitmq (>= 0.0.0)
+      redis (>= 0.0.0)
+      yum (>= 0.0.0)
+
+DEPENDENCIES
+  apt (>= 0)
+  iptables (>= 0)
+  rabbitmq (>= 0)
+  redis (>= 0)
+  sensu (>= 0)
+  yum (>= 0)
+
