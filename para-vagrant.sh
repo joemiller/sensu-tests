@@ -29,13 +29,12 @@ parallel_provision() {
     failures=$(egrep  '^FAILURE' logs/*.out.txt | sed -e 's/^logs\///' -e 's/\.out\.txt:.*//' -e 's/^/  /')
     successes=$(egrep '^SUCCESS' logs/*.out.txt | sed -e 's/^logs\///' -e 's/\.out\.txt:.*//' -e 's/^/  /')
 
-    echo '-------------------- Results --------------------------'
     echo
-    echo "Failures: `echo "$failures" | wc -l`"
+    echo "Failures:"
     echo '------------------'
     echo "$failures"
     echo
-    echo "Successes: `echo "$successes" | wc -l`"
+    echo "Successes:"
     echo '------------------'
     echo "$successes"
 }
