@@ -35,9 +35,7 @@ Note on Machine Resources
 -------------------------
 
 If you run the full test suite (`rake vagrant` or `para-vagrant.sh`) all
-12 of the test VM's will be booted, but the provisioning tasks will only be
-run on `NUM_CPUs` of VM's at a time. To change the testing concurrency, modify
-`MAX_PROCS` in `para-vagrant.sh`.
+12 of the test VM's will be booted and each VM will use ~ 700MB RAM.
 
 Usage
 -----
