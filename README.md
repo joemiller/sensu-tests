@@ -76,21 +76,35 @@ After the VM's are booted up, the `vagrant provision` (test) process will
 be executed in parallel on the VM's to speed up testing.
 
 The provisioning concurrency can be controlled by setting `$MAX_PROCS` at
-the top of the script.
+the top of the `para-vagrant.sh` script.
 
 Detailed Logs of each provision process will be generated in the `logs/` 
 directory.
 
 ### Run tests on a single platform
 
-To run Chef + Rspec on just one platform, you can do:
+To run Chef + Rspec on just one platform, use one of these methods:
 
 1. `vagrant up <BOX_NAME>` - will boot the box and run the provision tasks.
 2. `vagrant up --no-provision <BOX_NAME>` - Boot box but don't run provision.
-3. `vagrant provision <BOX_NAME>` - Run provision tasks on one box. Good for 
-   re-running a failed test.
+3. `vagrant provision <BOX_NAME>` - Run provision tasks on already booted box.
+    Good for re-running a failed test.
+4. The tests can also be run directly inside a VM with `rake spec`.
 
-The tests can also be run directly on a system with `rake rspec`.
+Known Issues
+-------------
+
+* Sometimes Vagrant will hang after running the provision process. I've seen
+  this most often on the centos_5 boxes. It looks related to a possible
+  Net::SSH bug:  https://github.com/mitchellh/vagrant/issues/603
+
+* It's not uncommon to see VirtualBox kernel panic on Mac OSX:
+  https://github.com/mitchellh/vagrant/issues/797
+
+Future / TODO
+-------------
+
+See `TODO.md`
 
 Author
 ------

@@ -51,7 +51,7 @@ echo ' ==> Calling "vagrant up" to boot the boxes...'
 vagrant up --no-provision
 
 # but run provision tasks in parallel
-echo ' ==> Beginning parallel testing...'
+echo " ==> Beginning parallel 'vagrant provision' processes ..."
 cat <<EOF | parallel_provision
 centos_6_64
 centos_6_32
