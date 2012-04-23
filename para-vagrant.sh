@@ -8,36 +8,36 @@ MAX_PROCS="--use-cpus-instead-of-cores"
 parallel_provision() {
     while read box; do
         echo $box
-	 done | parallel $MAX_PROCS -I"BOX" -q \
-	 	sh -c 'LOGFILE="logs/BOX.out.txt" ;									\
-	 			printf  "[BOX] Provisioning. Log: $LOGFILE, Result: " ;		\
-	 			vagrant provision BOX >$LOGFILE 2>&1 ; 				\
-	 	        RETVAL=$? ; 											\
-	 			if [ $RETVAL -gt 0 ]; then								\
-	 				echo " FAILURE";									\
-	 				tail -12 $LOGFILE | sed -e "s/^/[BOX]  /g";		\
-	 				echo "[BOX] ---------------------------------------------------------------------------";	\
-	 				echo "FAILURE ec=$RETVAL" >>$LOGFILE;			\
-	 			else													\
-	 				echo " SUCCESS";   									\
-	 				tail -5 $LOGFILE | sed -e "s/^/[BOX]  /g";       \
-	 				echo "[BOX] ---------------------------------------------------------------------------";	\
-	 				echo "SUCCESS" >>$LOGFILE;						\
-	 			fi;														\
-	 			exit $RETVAL'
+     done | parallel $MAX_PROCS -I"BOX" -q \
+        sh -c 'LOGFILE="logs/BOX.out.txt" ;                                 \
+                printf  "[BOX] Provisioning. Log: $LOGFILE, Result: " ;     \
+                vagrant provision BOX >$LOGFILE 2>&1 ;                      \
+                RETVAL=$? ;                                                 \
+                if [ $RETVAL -gt 0 ]; then                                  \
+                    echo " FAILURE";                                        \
+                    tail -12 $LOGFILE | sed -e "s/^/[BOX]  /g";             \
+                    echo "[BOX] ---------------------------------------------------------------------------";   \
+                    echo "FAILURE ec=$RETVAL" >>$LOGFILE;                   \
+                else                                                        \
+                    echo " SUCCESS";                                        \
+                    tail -5 $LOGFILE | sed -e "s/^/[BOX]  /g";              \
+                    echo "[BOX] ---------------------------------------------------------------------------";   \
+                    echo "SUCCESS" >>$LOGFILE;                              \
+                fi;                                                         \
+                exit $RETVAL'
 
-	failures=$(egrep  '^FAILURE' logs/*.out.txt | sed -e 's/^logs\///' -e 's/\.out\.txt:.*//' -e 's/^/  /')
-	successes=$(egrep '^SUCCESS' logs/*.out.txt | sed -e 's/^logs\///' -e 's/\.out\.txt:.*//' -e 's/^/  /')
+    failures=$(egrep  '^FAILURE' logs/*.out.txt | sed -e 's/^logs\///' -e 's/\.out\.txt:.*//' -e 's/^/  /')
+    successes=$(egrep '^SUCCESS' logs/*.out.txt | sed -e 's/^logs\///' -e 's/\.out\.txt:.*//' -e 's/^/  /')
 
-	echo '-------------------- Results --------------------------'
-	echo
-	echo "Failures: `echo "$failures" | wc -l`"
-	echo '------------------'
-	echo "$failures"
-	echo
-	echo "Successes: `echo "$successes" | wc -l`"
-	echo '------------------'
-	echo "$successes"
+    echo '-------------------- Results --------------------------'
+    echo
+    echo "Failures: `echo "$failures" | wc -l`"
+    echo '------------------'
+    echo "$failures"
+    echo
+    echo "Successes: `echo "$successes" | wc -l`"
+    echo '------------------'
+    echo "$successes"
 }
 
 ## -- main -- ##
