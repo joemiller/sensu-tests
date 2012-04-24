@@ -60,6 +60,8 @@ ubuntu_1104_32
 ubuntu_1104_64
 ubuntu_1110_32
 ubuntu_1110_64
+ubuntu_1204_32
+ubuntu_1204_64
 debian_6_32
 debian_6_64
 centos_5_64
