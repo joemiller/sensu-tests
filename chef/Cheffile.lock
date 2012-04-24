@@ -31,7 +31,7 @@ GIT
 GIT
   remote: https://github.com/sensu/sensu-chef
   ref: master
-  sha: f5fb8a2e98cd06a669750cebd90f5d8577fbe6e5
+  sha: 09162dd12adb429654c00da00fc4183c83b39e47
   specs:
     sensu (0.0.7)
       apt (>= 0.0.0)

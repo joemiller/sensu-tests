@@ -6,5 +6,3 @@ gem "rspec", "~> 2.3.0"
 gem "ohai", ">= 0.6.0"
 
 gem "sys-proctable"
-
-gem "librarian"
