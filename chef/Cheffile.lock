@@ -10,10 +10,10 @@ SITE
 
 GIT
   remote: https://github.com/CXInc/chef-redis
-  ref: master
-  sha: c9662ee9013775a19f12ace0cc1ce13681552fb8
+  ref: 1.0.2
+  sha: 36a94382d77da8dae282b3be46feddf40d2ac568
   specs:
-    redis (1.0.1)
+    redis (1.0.2)
       build-essential (>= 0.0.0)
       runit (>= 0.0.0)
       yum (>= 0.0.0)
