@@ -22,7 +22,7 @@ describe "sensu integration test #1" do
       |      "handler": "integration_test1_handler",
       |      "command": "echo 'this is only a test'; exit 2",
       |      "interval": 30,
-      |      "subscribers": [ "test" ]
+      |      "subscribers": [ "vagrant" ]
       |    }
       |  }  
       |}
