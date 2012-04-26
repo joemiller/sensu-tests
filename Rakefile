@@ -1,21 +1,12 @@
 require 'rake'
 
-# backwards/forwards compatible mechanism to test for installed gems
-def gem_available?(name)
-  if Gem::Specification.methods.include?('find_all_by_name')
-    !Gem::Specification.find_all_by_name(name).empty?
-  else
-    Gem.available?(name)
-  end
-end
-
 ## -- tasks intended to be run outside of the VM's ---
 
 desc "run librarian-chef to pull down all cookbooks"
 task :chef_prep do
   ## install librarian manually instead of with bundler due to this:
   ##  https://github.com/applicationsonline/librarian/issues/35
-  unless gem_available? 'librarian'
+  unless Gem.available? 'librarian'
     sh "gem install librarian --no-rdoc --no-ri --quiet"
   end
   sh "cd chef && librarian-chef update"
@@ -30,7 +21,7 @@ end
 
 desc "install bundler and other gems"
 task :bundler_install do
-  unless gem_available? 'bundler'
+  unless Gem.available? 'bundler'
     sh "gem install bundler --no-rdoc --no-ri --quiet"
   end
   sh "bundle install --quiet"
