@@ -7,16 +7,23 @@ SITE
       yum (>= 0.5.0)
     iptables (0.10.0)
     runit (0.15.0)
-    yum (0.5.2)
 
 GIT
-  remote: https://github.com/portertech/chef-redis
-  ref: config
-  sha: fdaa681f80fc6f733483e2eb5518a08996996679
+  remote: https://github.com/CXInc/chef-redis
+  ref: master
+  sha: c9662ee9013775a19f12ace0cc1ce13681552fb8
   specs:
     redis (1.0.1)
       build-essential (>= 0.0.0)
       runit (>= 0.0.0)
+      yum (>= 0.0.0)
+
+GIT
+  remote: https://github.com/joemiller/yum.git
+  ref: flush_internal_yum_cache
+  sha: 4af68dfc60c4b1b80bee7a4a66444aaeb1e4c5bc
+  specs:
+    yum (0.5.2)
 
 GIT
   remote: https://github.com/portertech/rabbitmq
@@ -31,7 +38,7 @@ GIT
 GIT
   remote: https://github.com/sensu/sensu-chef
   ref: master
-  sha: 09162dd12adb429654c00da00fc4183c83b39e47
+  sha: 0186133c1e1e51aad559297775e873e56730bb57
   specs:
     sensu (0.0.7)
       apt (>= 0.0.0)

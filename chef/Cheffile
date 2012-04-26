@@ -8,8 +8,7 @@ cookbook "rabbitmq",
   :git => "https://github.com/portertech/rabbitmq",
   :ref => "COOK-1219"
 cookbook "redis",
-  :git => "https://github.com/CXInc/chef-redis",
-  :ref => "config"
+  :git => "https://github.com/CXInc/chef-redis"
 cookbook "iptables"
 cookbook "sensu",
   :git => "https://github.com/sensu/sensu-chef"
