@@ -51,19 +51,5 @@ vagrant up --no-provision
 
 # but run provision tasks in parallel
 echo " ==> Beginning parallel 'vagrant provision' processes ..."
-cat <<EOF | parallel_provision
-centos_6_64
-centos_6_32
-ubuntu_1004_32
-ubuntu_1004_64
-ubuntu_1104_32
-ubuntu_1104_64
-ubuntu_1110_32
-ubuntu_1110_64
-ubuntu_1204_32
-ubuntu_1204_64
-debian_6_32
-debian_6_64
-centos_5_64
-centos_5_32
-EOF
+
+ruby -rjson -e 'puts JSON.parse(ARGF.read).keys' boxes.json | parallel_provision

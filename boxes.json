@@ -1,0 +1,58 @@
+{
+  "centos_6_64": {
+    "box_url": "http://vagrant.sensuapp.org/centos-6-x86_64.box",
+    "sensu_ssl": true
+  },
+  "centos_6_32": {
+    "box_url": "http://vagrant.sensuapp.org/centos-6-i386.box",
+    "sensu_ssl": true
+  },
+  "ubuntu_1004_32": {
+    "box_url": "http://vagrant.sensuapp.org/ubuntu-1004-i386.box",
+    "sensu_ssl": false
+  },
+  "ubuntu_1004_64": {
+    "box_url": "http://vagrant.sensuapp.org/ubuntu-1004-amd64.box",
+    "sensu_ssl": false
+  },
+  "ubuntu_1104_32": {
+    "box_url": "http://vagrant.sensuapp.org/ubuntu-1104-i386.box",
+    "sensu_ssl": false
+  },
+  "ubuntu_1104_64": {
+    "box_url": "http://vagrant.sensuapp.org/ubuntu-1104-amd64.box",
+    "sensu_ssl": false
+  },
+  "ubuntu_1110_32": {
+    "box_url": "http://vagrant.sensuapp.org/ubuntu-1110-i386.box",
+    "sensu_ssl": true
+  },
+  "ubuntu_1110_64": {
+    "box_url": "http://vagrant.sensuapp.org/ubuntu-1110-amd64.box",
+    "sensu_ssl": true
+  },
+  "ubuntu_1204_32": {
+    "box_url": "http://vagrant.sensuapp.org/ubuntu-1204-i386.box",
+    "sensu_ssl": true
+  },
+  "ubuntu_1204_64": {
+    "box_url": "http://vagrant.sensuapp.org/ubuntu-1204-amd64.box",
+    "sensu_ssl": true
+  },
+  "debian_6_32": {
+    "box_url": "http://vagrant.sensuapp.org/debian-6-i386.box",
+    "sensu_ssl": false
+  },
+  "debian_6_64": {
+    "box_url": "http://vagrant.sensuapp.org/debian-6-amd64.box",
+    "sensu_ssl": false
+  },
+  "centos_5_64": {
+    "box_url": "http://vagrant.sensuapp.org/centos-5-x86_64.box",
+    "sensu_ssl": true
+  },
+  "centos_5_32": {
+    "box_url": "http://vagrant.sensuapp.org/centos-5-i386.box",
+    "sensu_ssl": true
+  }
+}
