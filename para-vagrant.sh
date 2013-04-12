@@ -47,7 +47,7 @@ rm -f logs/*.out.txt
 
 # start boxes sequentially to avoid vbox explosions
 echo ' ==> Calling "vagrant up" to boot the boxes...'
-vagrant up --no-provision
+vagrant up --no-provision || exit 1
 
 # but run provision tasks in parallel
 echo " ==> Beginning parallel 'vagrant provision' processes ..."
